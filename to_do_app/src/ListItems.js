@@ -39,7 +39,7 @@ function ListItems(props){
                     </span>
                     <span>
                         <FontAwesomeIcon className="faiconsCheck" icon='check'
-                        onClick={(e) => props.checkItem(e.target.value, item.key)}/>
+                        onClick={(e) => props.checkItem(item.key)}/>
                     </span> 
                     <span>
                         <FontAwesomeIcon className="faiconsEdit" icon='edit'
