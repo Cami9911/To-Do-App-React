@@ -4,8 +4,10 @@ import './ListItems.js';
 import ListItems from './ListItems.js';
 import {library } from '@fortawesome/fontawesome-svg-core'
 import {faTrash } from '@fortawesome/free-solid-svg-icons'
+import {faEdit } from '@fortawesome/free-solid-svg-icons'
 
 library.add(faTrash)
+library.add(faEdit)
 
 class App extends React.Component{
   constructor(props) {
@@ -72,14 +74,17 @@ class App extends React.Component{
   render(){
     return (
       <div className="appBody">
-      <header>
-        <form id="to-do-form" onSubmit={this.addItem}>
-          <input type="text" placeholder="Enter Text"
-          value={this.state.currentItem.text}
-          onChange={this.handleInput}/>
-          <button type="submit">Add</button>
-        </form>
-      </header>
+        <header>
+          Task Manager
+        </header>
+        <div>
+          <form id="to-do-form" onSubmit={this.addItem}>
+            <input type="text" placeholder="Add Task.."
+              value={this.state.currentItem.text}
+              onChange={this.handleInput} />
+            <button type="submit">Add</button>
+          </form>
+        </div>
       <ListItems 
       items={this.state.items}
       deleteItem={this.deleteItem}

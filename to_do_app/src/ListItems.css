@@ -1,6 +1,6 @@
 .list{
     color: white;
-    width: 300px;
+    width: 380px;
     height: 30px;
 }
 
@@ -8,21 +8,24 @@
     position: relative;
 }
 
-.list p span{
-    position: absolute;
-    right:10px;
-}
-
 .list p input{
     background-color: transparent;
     border:0;
-    color:rgb(240, 190, 190);
+    color:white;
     outline:none;
 }
 
-.faicons{
-    color: rgb(240, 190, 190);
+.faicons,.faiconsEdit{
+    color: white;
 }
-.faicons:hover{
+.faicons:hover, .faiconsEdit:hover{
     color: rgb(241, 58, 58);
+}
+.faicons{
+    position: absolute;
+    right:0px;
+}
+.faiconsEdit{
+    right:25px;
+    position: absolute;
 }

@@ -14,15 +14,19 @@ function ListItems(props){
                     <input type="text"
                     id={item.key}
                     value={item.text}
-                    onChange={
-                        (e) =>{
-                            props.editItem(e.target.value, item.key)
-                        }
-                    }
+                    // onChange={
+                    //     (e) =>{
+                    //         props.editItem(e.target.value, item.key)
+                    //     }
+                    // }
                     />
                     <span>
                         <FontAwesomeIcon className="faicons" icon='trash'
                         onClick={() => props.deleteItem(item.key)}/>
+                    </span>
+                    <span>
+                        <FontAwesomeIcon className="faiconsEdit" icon='edit'
+                        onClick={(e) => props.editItem(e.target.value, item.key)}/>
                     </span>
                 </p>
             </div>
