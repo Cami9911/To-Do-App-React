@@ -19,9 +19,9 @@ class App extends React.Component{
        items:[],
        currentItem:{
          text:'',
-         key:''
+         key:'',
+         checked:false
        },
-       check:false
     }
     this.handleInput = this.handleInput.bind(this);
     this.addItem = this.addItem.bind(this);
@@ -34,7 +34,8 @@ class App extends React.Component{
     this.setState({
       currentItem:{
         text: e.target.value,
-        key:Date.now()
+        key:Date.now(),
+        checked:false
       }
     })
   }
@@ -49,7 +50,8 @@ class App extends React.Component{
         items:newItems,
         currentItem:{
           text:'',
-          key:''
+          key:'',
+          checked:false
         }
       })
       console.log(newItems);
@@ -76,16 +78,18 @@ class App extends React.Component{
     })
   }
 
-  checkItem(text,key){
-    const items=this.state.items
-    items.map(item=>{
-      if(item.key===key){
-       items.text=text;
-
+  checkItem(key) {
+    const items = this.state.items
+    items.map(item => {
+      if (item.key === key) {
+        return {
+          ...item,
+          checked: !item.checked
+        }
       }
     })
     this.setState({
-      items:items
+      items: items
     })
   }
 
@@ -99,7 +103,8 @@ class App extends React.Component{
           <form id="to-do-form" onSubmit={this.addItem}>
             <input type="text" placeholder="Add Task.."
               value={this.state.currentItem.text}
-              onChange={this.handleInput} />
+              onChange={this.handleInput} 
+              checkItem={() =>this.checkItem(this.state.currentItem.key)}/>
             <button type="submit">Add</button>
           </form>
         </div>

@@ -21,7 +21,9 @@ function ListItems(props){
                     //         props.editItem(e.target.value, item.key)
                     //     }
                     // }
-            
+                    style={{
+                        textDecoration: item.checked ? "line-through" : null
+                    }}
 
                     />
                     <input type="checkbox"
@@ -37,9 +39,6 @@ function ListItems(props){
                     </span>
                     <span>
                         <FontAwesomeIcon className="faiconsCheck" icon='check'
-                        style={{
-                            textDecoration:"line-through"
-                        }}
                         onClick={(e) => props.checkItem(e.target.value, item.key)}/>
                     </span> 
                     <span>
