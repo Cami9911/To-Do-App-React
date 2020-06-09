@@ -12,3 +12,17 @@
     position: absolute;
     right:10px;
 }
+
+.list p input{
+    background-color: transparent;
+    border:0;
+    color:rgb(240, 190, 190);
+    outline:none;
+}
+
+.faicons{
+    color: rgb(240, 190, 190);
+}
+.faicons:hover{
+    color: rgb(241, 58, 58);
+}
