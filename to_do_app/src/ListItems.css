@@ -1,0 +1,14 @@
+.list{
+    color: white;
+    width: 300px;
+    height: 30px;
+}
+
+.list p{
+    position: relative;
+}
+
+.list p span{
+    position: absolute;
+    right:10px;
+}
