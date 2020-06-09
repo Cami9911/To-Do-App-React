@@ -15,10 +15,10 @@
     outline:none;
 }
 
-.faicons,.faiconsEdit{
+.faicons,.faiconsEdit, .faiconsCheck{
     color: white;
 }
-.faicons:hover, .faiconsEdit:hover{
+.faicons:hover, .faiconsEdit:hover, .faiconsCheck:hover{
     color: rgb(241, 58, 58);
 }
 .faicons{
@@ -28,4 +28,8 @@
 .faiconsEdit{
     right:25px;
     position: absolute;
+}
+.faiconsCheck{
+    position: absolute;
+    right: 55px;
 }

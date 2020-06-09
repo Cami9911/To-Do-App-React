@@ -5,9 +5,11 @@ import ListItems from './ListItems.js';
 import {library } from '@fortawesome/fontawesome-svg-core'
 import {faTrash } from '@fortawesome/free-solid-svg-icons'
 import {faEdit } from '@fortawesome/free-solid-svg-icons'
+import {faCheck } from '@fortawesome/free-solid-svg-icons'
 
 library.add(faTrash)
 library.add(faEdit)
+library.add(faCheck)
 
 class App extends React.Component{
   constructor(props) {
@@ -18,12 +20,14 @@ class App extends React.Component{
        currentItem:{
          text:'',
          key:''
-       }
+       },
+       check:false
     }
     this.handleInput = this.handleInput.bind(this);
     this.addItem = this.addItem.bind(this);
     this.deleteItem = this.deleteItem.bind(this);
     this.editItem = this.editItem.bind(this);
+    this.checkItem = this.checkItem.bind(this);
   }
 
   handleInput(e){
@@ -71,6 +75,20 @@ class App extends React.Component{
       items:items
     })
   }
+
+  checkItem(text,key){
+    const items=this.state.items
+    items.map(item=>{
+      if(item.key===key){
+       items.text=text;
+
+      }
+    })
+    this.setState({
+      items:items
+    })
+  }
+
   render(){
     return (
       <div className="appBody">
@@ -88,7 +106,8 @@ class App extends React.Component{
       <ListItems 
       items={this.state.items}
       deleteItem={this.deleteItem}
-      editItem={this.editItem}>
+      editItem={this.editItem}
+      checkItem={this.checkItem}>
       </ListItems>
       </div>
     )
